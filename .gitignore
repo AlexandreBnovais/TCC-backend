@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+
+# Environment variables
+*.env
+
+# Dependency files (optional if using lockfile)
+package-lock.json
+
+# Local Database
+./src/app/database/database.sqlite
