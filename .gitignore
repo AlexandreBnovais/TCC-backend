@@ -10,3 +10,6 @@ package-lock.json
 # build development
 /dist
 
+# Database files and migrations
+prisma/database/
+prisma/migrations/
