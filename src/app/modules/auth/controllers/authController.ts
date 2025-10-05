@@ -1,7 +1,0 @@
-
-
-//login route 
-
-class AuthController {
-
-}
