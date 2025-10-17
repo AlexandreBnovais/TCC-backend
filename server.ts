@@ -1,5 +1,5 @@
 import { createServer } from "http";
-import { app } from "./app/app.js";
+import { app } from './src/app.ts';
 import 'dotenv/config';
 
 const server = createServer(app);

@@ -14,8 +14,35 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
+    id        Int       @id @default(autoincrement())
+    nome      String  
+    email     String    @unique
+    password  String  
+    createdAt DateTime  @default(now())
+    updatedAt  DateTime  @updatedAt
+    @@map("users")
+}
+
+model Task {
+    id Int @id @default(autoincrement())
+    title String      
+    term  DateTime        
+    statuses Status[]
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    @@index([title])
+    @@map("tasks")    
+}
+
+model Status {
+    id Int @id @default(autoincrement())
+    state State 
+    task Task @relation(fields: [taskId], references: [id])
+    taskId Int @unique
+}
+
+enum State {
+    ACTIVE
+    PENDENT
+    FINALIZED
 }
